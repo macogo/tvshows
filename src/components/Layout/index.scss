@@ -1,0 +1,16 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+    @include flex-center;
+    flex-direction: column;
+}
+
+.content {
+    @include flex-center;
+    margin-top: 120px;
+    padding: 20px;
+}

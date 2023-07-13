@@ -1,0 +1,13 @@
+version: "1"
+services:
+  app:
+    build:
+      labels:
+        - app=tvshows
+      dockerfile: Dockerfile
+    image: tvshows
+    ports:
+      - "3000:80"
+    restart: always
+    mem_limit: 1G
+

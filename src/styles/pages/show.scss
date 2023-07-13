@@ -1,0 +1,39 @@
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.show {
+    &-container {
+        @include flex-center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &-info {
+        @include flex-center;
+        justify-content: start;
+        max-width: 1200px;
+    }
+
+    &-card-info {
+        max-width: 920px;
+        margin:10px 0 0 25px;
+    }
+
+    &-cast {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+        max-width: 1200px;
+    }
+
+    &-cast-content {
+        margin-top: 40px;
+    }
+
+    &-cast-item {
+        margin: 0 25px 15px 0;
+    }
+}

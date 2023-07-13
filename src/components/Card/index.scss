@@ -1,0 +1,38 @@
+.card {
+    position: relative;
+    max-width: 210px;
+    margin: 0 20px 25px 0;
+    background: #33393e;
+    border: 1px solid #efefef;
+    overflow: hidden;
+
+    img {
+        cursor: pointer;
+    }
+}
+
+@mixin space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-info {
+    color: #fff;
+    padding: 10px;
+
+    &-bottom {
+        @include space-between;
+        margin-top: 10px;
+    }
+
+    &-rating {
+        @include space-between;
+
+
+        label {
+            margin: 4px 5px 0 5px;
+        }
+    }
+
+}
