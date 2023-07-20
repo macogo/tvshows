@@ -6,16 +6,6 @@ on:
   pull_request:
     branches: ["master"]
 
-env:
-  APP_ENV: prd
-  SERVERS: |
-    (
-      "172.17.30.4"
-      "172.17.30.8"
-    )
-  # DEPLOYMENT_DIR: /data/www/tvshows/
-  APP_NAME: tvshows
-
 jobs:
   build:
     runs-on: ubuntu-latest
