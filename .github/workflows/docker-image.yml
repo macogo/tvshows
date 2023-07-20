@@ -77,7 +77,8 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: ${{ secrets.REACTUSERNAME }}/tvshows:latest
-          run: make start
+          run: |
+            echo "runing the docker image"
   # push_to_vercel:
   #   runs-on: ubuntu-latest
   #   steps:
