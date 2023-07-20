@@ -2,17 +2,27 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
+
+env:
+  APP_ENV: prd
+  SERVERS: |
+    (
+      "172.17.30.4"
+      "172.17.30.8"
+    )
+  # DEPLOYMENT_DIR: /data/www/tvshows/
+  APP_NAME: tvshows
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - uses: actions/checkout@v3
+      # - name: Build the Docker image
+      # - run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - run: make build
+      - run: make start
